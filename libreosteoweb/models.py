@@ -179,6 +179,15 @@ class Examination(models.Model):
     # Type : 3 -> return of a previous examination
     # Type : 4 -> emergency examination
     type = models.SmallIntegerField(_('Type'))
+    consultation_type = models.SmallIntegerField(
+        _('Consultation type'),
+        choices=(
+            (1, _('Osteopathy')),
+            (2, _('Laser')),
+            (3, _('Micronutrition')),
+        ),
+        default=1,
+    )
     invoices = models.ManyToManyField('Invoice',
                                       verbose_name=_('Invoice'),
                                       blank=True)

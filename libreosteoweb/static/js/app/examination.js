@@ -132,12 +132,35 @@ examination.directive('examination', ['ExaminationServ', 'PatientServ', 'Therape
           text: gettext('Emergency')
         },
       ];
+      $scope.consultationTypes = [{
+        value: 1,
+        text: gettext('Osteopathy')
+      },
+        {
+          value: 2,
+          text: gettext('Laser')
+        },
+        {
+          value: 3,
+          text: gettext('Micronutrition')
+        },
+      ];
       $scope.showTypes = function() {
         if ($scope.model) {
           var selected = $filter('filter')($scope.types, {
             value: $scope.model.type
           });
           return ($scope.model && $scope.model.type && selected.length) ? selected[0].text : gettext('not documented');
+        } else {
+          return gettext('not documented');
+        }
+      };
+      $scope.showConsultationTypes = function() {
+        if ($scope.model) {
+          var selected = $filter('filter')($scope.consultationTypes, {
+            value: $scope.model.consultation_type
+          });
+          return ($scope.model && $scope.model.consultation_type && selected.length) ? selected[0].text : gettext('not documented');
         } else {
           return gettext('not documented');
         }
