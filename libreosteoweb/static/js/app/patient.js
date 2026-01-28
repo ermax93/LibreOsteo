@@ -372,6 +372,7 @@ patient.controller('PatientCtrl', ['$scope', '$state', '$stateParams', '$filter'
         conclusion: '',
         status: 0,
         type: 1,
+        consultation_type: 1,
         date: new Date(),
         patient: $scope.patient.id,
         therapeut: '',

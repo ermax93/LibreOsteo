@@ -141,7 +141,7 @@ class ExaminationExtractSerializer(WithPkMixin, serializers.ModelSerializer):
     class Meta:
         model = Examination
         fields = ('id', 'reason', 'date', 'status', 'therapeut', 'type',
-                  'comments', 'office', 'office_detail')
+                  'consultation_type', 'comments', 'office', 'office_detail')
         depth = 1
 
     def get_nb_comments(self, obj):
